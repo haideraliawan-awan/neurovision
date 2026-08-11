@@ -4,13 +4,13 @@
 
 NeuroVision is an AI-based facial micro-expression recognition system developed to recognize subtle and brief facial expressions using computer vision, machine learning, and deep learning techniques.
 
-The system explores both traditional machine learning and deep learning approaches for facial micro-expression recognition and provides an application interface for demonstrating the trained recognition model.
+The system explores both traditional machine learning and deep learning approaches for facial micro-expression recognition. It also provides an interactive application interface for demonstrating the trained recognition model.
 
 ## Project Objectives
 
 - Develop a system for recognizing facial micro-expressions.
 - Apply computer vision techniques for facial image preprocessing.
-- Extract meaningful features from facial data.
+- Extract meaningful spatial and temporal features from facial data.
 - Evaluate traditional machine learning and deep learning approaches.
 - Develop a convolutional neural network for facial micro-expression recognition.
 - Provide an interactive interface for demonstrating the trained model.
@@ -28,7 +28,7 @@ The system explores both traditional machine learning and deep learning approach
 - Streamlit
 - Haar Cascade
 - MediaPipe
-```markdown
+
 ## Methodology
 
 The project consists of two major approaches: traditional machine learning and deep learning.
@@ -51,10 +51,13 @@ LBP-TOP Feature Extraction
 SVM Classification
      ↓
 Micro-Expression Recognition
-Deep Learning
+```
+
+### Deep Learning
 
 The deep learning approach uses the SMIC dataset and a Convolutional Neural Network (CNN) for facial micro-expression recognition.
 
+```text
 Input Facial Image
         ↓
 Preprocessing
@@ -70,77 +73,81 @@ Feature Learning
 Classification
         ↓
 Micro-Expression Recognition
+```
 
-### Look at what is happening
+## Datasets
 
-The first diagram starts with:
+The project uses publicly available facial micro-expression datasets for experimentation.
+
+### CASME II
+
+CASME II is used for the traditional machine learning pipeline involving preprocessing, LBP-TOP feature extraction, and Support Vector Machine classification.
+
+### SMIC
+
+SMIC is used for the deep learning pipeline involving preprocessing and Convolutional Neural Network-based classification.
+
+Dataset files are not included in this repository.
+
+## Machine Learning Approach
+
+The traditional machine learning pipeline uses Local Binary Pattern on Three Orthogonal Planes (LBP-TOP) for spatiotemporal feature extraction.
+
+The extracted features are used to train a Support Vector Machine (SVM) classifier for facial micro-expression recognition.
+
+The pipeline includes face detection, face cropping, image resizing, normalization, LBP-TOP feature extraction, feature standardization, and classification.
+
+## Deep Learning Approach
+
+The deep learning pipeline uses a Convolutional Neural Network (CNN) to automatically learn relevant visual features from facial images.
+
+The CNN architecture includes convolutional layers, pooling layers, dropout, flattening, and fully connected classification layers.
+
+The trained CNN model is used for facial micro-expression recognition and is integrated into the application's prediction pipeline.
+
+## Application
+
+A Streamlit-based application is used to demonstrate the trained deep learning model.
+
+The application provides an interactive interface through which facial input can be supplied to the recognition system and the predicted micro-expression category can be displayed.
+
+## Project Structure
+
+The repository is organized to separate source code, trained models, notebooks, and supporting resources.
 
 ```text
-```text
-Input Frames
-...
-Micro-Expression Recognition
+neurovision/
+├── README.md
+├── requirements.txt
+├── .gitignore
+├── src/
+├── models/
+├── notebooks/
+└── screenshots/
+```
 
-**That second ` ``` ` is what closes the code block.**
+The exact structure may vary depending on the implementation modules included in the repository.
 
-Then we have:
+## Results
 
-```text
-### Deep Learning
+The project evaluates both traditional machine learning and deep learning approaches for facial micro-expression recognition.
 
-Because the previous code block has been closed, GitHub understands that this is a heading, so it will appear normally.
+Performance depends on factors including the dataset, preprocessing pipeline, feature representation, model architecture, and evaluation methodology.
 
-Then the second diagram starts:
+Detailed experimental results will be documented alongside the relevant implementation and evaluation components.
 
-```text
-Input Facial Image
-...
-Micro-Expression Recognition
+## Future Improvements
 
-Again, we close it at the end.
+- Improve recognition performance on unseen datasets.
+- Increase robustness against variations in lighting, pose, and image quality.
+- Explore advanced deep learning architectures.
+- Improve temporal modeling of facial micro-expressions.
+- Expand the range of recognizable micro-expression categories.
+- Improve real-time recognition capabilities.
+- Evaluate the system on additional facial micro-expression datasets.
 
----
+## Academic Project
 
-### What you should do right now
+NeuroVision was developed as a Final Year Project in the field of Computer Science, combining computer vision, machine learning, and deep learning techniques for facial micro-expression recognition.
 
-Since your README is already partially entered, **don't try to fix the entire thing manually**.
-
-Go to your `README.md` → **Edit**.
-
-Find this part:
-
-> `### Traditional Machine Learning`
-
-and replace everything from **`## Methodology` through the end of the Deep Learning diagram** with the corrected section above.
-
-Then click **Preview**.
-
-You should see:
-
-**Methodology**
-
-The project consists...
-
-### Traditional Machine Learning
-
-The traditional machine learning pipeline...
-
-**Input Frames**  
-↓  
-**Face Detection**  
-↓  
-...
-
-### Deep Learning
-
-The deep learning approach...
-
-**Input Facial Image**  
-↓  
-**Preprocessing**  
-↓  
-...
-
-Everything after **Deep Learning** should now be normal, bright text again. 👍
-
-**Don't worry about the rest of the README yet.** Let's get this formatting working first, then I'll help you with the remaining sections o
+The project demonstrates the application of both traditional feature-based machine learning and deep learning approaches to the recognition of subtle facial expressions.
